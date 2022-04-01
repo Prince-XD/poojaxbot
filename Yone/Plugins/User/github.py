@@ -4,12 +4,6 @@ from Yone.Plugins.disable import DisableAbleCommandHandler
 from telegram import Update, ParseMode
 from telegram.ext import CallbackContext, run_async
 
-__mod_name__ = "Github"
-
-__help__ = """ Get Your Github Profile information by using this Command - 
-
- ‣ `/github noob-kittu` - will send profile of your github account """
-
 def github(update: Update, context: CallbackContext):
     bot = context.bot
     message = update.effective_message
