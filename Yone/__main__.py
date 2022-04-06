@@ -83,18 +83,9 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-PM_START_TEXT = """ Hello *{}*, My name is *{}*! 
-A telegram group management bot. I'm here to help you to manage your groups.
-I have lots of handy features such as:
-‣ Warning system
-‣ Artificial intelligence
-‣ Flood control system
-‣ Note keeping system
-‣ Filters keeping system
-‣ Approvals and much more.
-
-So what are you waiting for?
-*Add me in your groups and give me full rights to make me function well.*
+PM_START_TEXT = """હાઈ ડીયર! મારું નામ પૂજા છે.
+ હું ઉપયોગી સુવિધાઓ સાથે તમારા ગ્રુપને સંચાલિત કરવામાં મદદ કરી શકું છું,
+ તમે મને તમારા ગ્રુપમાં ઉમેરી શકો છો!
 """
 
 
@@ -164,22 +155,22 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup([
     [
         InlineKeyboardButton(
-            text="➕️ Add me to your chat ➕️", url=f"https://t.me/{context.bot.username}?startgroup=true"),
+            text="➕️ મને તમારા ગ્રુપમાં ઉમેરો ➕️", url=f"https://t.me/{context.bot.username}?startgroup=true"),
     ],
     [
-        InlineKeyboardButton(text="Admin", callback_data="admin_back"),
+        InlineKeyboardButton(text="એડમીન", callback_data="admin_back"),
         InlineKeyboardButton(
-            text="Users", callback_data="user_back"
+            text="યુઝર્સ", callback_data="user_back"
         ),
     ],
     [
-        InlineKeyboardButton(text="Tools", callback_data="tools_back"),
+        InlineKeyboardButton(text="ટૂલ", callback_data="tools_back"),
         InlineKeyboardButton(
-            text="Bot Info", callback_data="yone_"
+            text="બોટ માહિતી", callback_data="yone_"
         ),
     ],
     [
-        InlineKeyboardButton(text="Helps & Commands❔", callback_data="help_back"),
+        InlineKeyboardButton(text="હેલ્પ અને કમાન્ડ્સ ❔", callback_data="help_back"),
     ],
 ]),
                 parse_mode=ParseMode.MARKDOWN,
@@ -187,22 +178,22 @@ def start(update: Update, context: CallbackContext):
             )
     else:
             text = (
-                f"Hello {mention_html(user.id, user.first_name)}, I'm {bot.first_name}\n\n"
+                f"હાઈ {mention_html(user.id, user.first_name)}, હું {bot.first_name} છું\n\n"
                 f"┏━━━━━━━━━━━━━━━━━━━\n"
-                f"┣[• Owner : @{OWNER_USERNAME}  \n"
-                f"┣[• Uptime : {uptime} \n"
-                f"┣[• Core : {psutil.cpu_percent()}%\n"
-                f"┣[• Python   : Ver {python_version()} \n"
+                f"┣[• ઓવનર : @{OWNER_USERNAME}  \n"
+                f"┣[• ઉપટાઈમ : {uptime} \n"
+                f"┣[• કોર : {psutil.cpu_percent()}%\n"
+                f"┣[• પ્યથોન વર્ઝન : {python_version()} \n"
                 f"┗━━━━━━━━━━━━━━━━━━━")
         
 
             keyboard = InlineKeyboardMarkup([
                 [
                     InlineKeyboardButton(
-                        text="SUPPORT", 
+                        text="સપોર્ટ", 
                         url=f"https://t.me/{SUPPORT_CHAT}"),
                     InlineKeyboardButton(
-                        text="DEVLOPER", 
+                        text="ડેવલપર", 
                         url=f"https://t.me/{OWNER_USERNAME}")
                     
                 ],
